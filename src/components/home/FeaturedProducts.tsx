@@ -90,7 +90,7 @@ export function FeaturedProducts() {
         <Box
           style={{
             display: 'flex',
-            gap: '20px',
+            gap: '16px',
             overflowX: 'auto',
             paddingBottom: '20px',
             scrollSnapType: 'x mandatory',
@@ -101,7 +101,7 @@ export function FeaturedProducts() {
               key={product.id}
               shadow="sm" 
               padding={0}
-              radius="lg"
+              radius="12"
               className="hover-lift"
               style={{ 
                 minWidth: '280px',
@@ -110,6 +110,16 @@ export function FeaturedProducts() {
                 border: '1px solid #E2E8F0',
                 scrollSnapAlign: 'start',
                 animationDelay: `${index * 0.1}s`,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                transition: 'box-shadow 0.3s ease, transform 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.12)';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <Card.Section style={{ position: 'relative' }} className="img-zoom">

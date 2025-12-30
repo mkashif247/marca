@@ -17,13 +17,15 @@ const categories = [
 
 export function CategoryIcons() {
   return (
-    <Box style={{ background: '#FFFFFF', padding: '16px 0' }}>
+    <Box style={{ background: '#FFFFFF', padding: '24px 0', position: 'relative', zIndex: 2 }}>
       <Container size="xl">
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))',
-          gap: '12px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
+          gap: '16px',
           justifyItems: 'center',
+          maxWidth: '1400px',
+          margin: '0 auto',
         }}>
           {categories.map((category) => (
             <CategoryItem key={category.name} {...category} />
@@ -41,28 +43,43 @@ function CategoryItem({ name, image }: { name: string; icon: string; image: stri
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '10px',
+        gap: '12px',
         cursor: 'pointer',
-        transition: 'all 0.2s ease',
-        padding: '8px',
+        transition: 'all 0.3s ease',
+        padding: '12px',
+        borderRadius: '12px',
+        width: '100%',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-4px)';
+        e.currentTarget.style.transform = 'translateY(-6px)';
+        e.currentTarget.style.backgroundColor = '#F8FAFC';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.backgroundColor = 'transparent';
       }}
     >
-      {/* Rounded Square Image Container - Noon Style */}
+      {/* Rounded Square Image Container */}
       <Box
         style={{
-          width: '80px',
-          height: '80px',
+          width: '90px',
+          height: '90px',
           borderRadius: '16px',
           overflow: 'hidden',
           backgroundColor: '#F5F5F5',
-          border: '1px solid #E5E5E5',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+          border: '2px solid #E5E5E5',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+          transition: 'box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 6px 16px rgba(124, 58, 237, 0.2)';
+          e.currentTarget.style.transform = 'scale(1.08)';
+          e.currentTarget.style.borderColor = '#A78BFA';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+          e.currentTarget.style.transform = 'scale(1)';
+          e.currentTarget.style.borderColor = '#E5E5E5';
         }}
       >
         <img 
@@ -72,10 +89,15 @@ function CategoryItem({ name, image }: { name: string; icon: string; image: stri
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            transition: 'transform 0.2s ease',
+            transition: 'transform 0.3s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.1)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
           }}
           onError={(e) => {
-            // Fallback to colored background if image fails
             (e.target as HTMLImageElement).style.display = 'none';
           }}
         />
@@ -84,12 +106,19 @@ function CategoryItem({ name, image }: { name: string; icon: string; image: stri
       {/* Category Name */}
       <Text 
         size="sm" 
-        fw={500} 
+        fw={600} 
         ta="center"
         style={{
-          color: '#333',
-          lineHeight: 1.3,
-          maxWidth: '90px',
+          color: '#1A1A1A',
+          lineHeight: 1.4,
+          maxWidth: '100px',
+          transition: 'color 0.3s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.color = '#7C3AED';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.color = '#1A1A1A';
         }}
       >
         {name}

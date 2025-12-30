@@ -1,4 +1,4 @@
-import { Container, Grid, Text, Title, Box, Group, TextInput, Button, Anchor, ActionIcon, Divider } from '@mantine/core';
+import { Container, Grid, Text, Title, Box, Group, TextInput, Button, Anchor, ActionIcon } from '@mantine/core';
 import { IconBrandFacebook, IconBrandInstagram, IconBrandTwitter, IconBrandYoutube, IconMail, IconBrandApple, IconBrandGooglePlay } from '@tabler/icons-react';
 
 const footerLinks = {
@@ -13,7 +13,7 @@ export function Footer() {
       {/* Newsletter Section */}
       <Box py={50} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
         <Container size="xl">
-          <Grid align="center" gutter={40}>
+          <Grid align="center" gutter="xl">
             <Grid.Col span={{ base: 12, md: 6 }}>
               <Title order={3} c="white" style={{ fontSize: '1.75rem' }}>
                 Join Our Newsletter
@@ -27,7 +27,7 @@ export function Footer() {
                 <TextInput
                   placeholder="Enter your email"
                   leftSection={<IconMail size={18} color="#94A3B8" />}
-                  radius="xl"
+                  radius="12"
                   size="lg"
                   style={{ flex: 1 }}
                   styles={{
@@ -35,13 +35,14 @@ export function Footer() {
                       backgroundColor: 'rgba(255,255,255,0.1)',
                       border: '1px solid rgba(255,255,255,0.2)',
                       color: 'white',
+                      borderRadius: '12px',
                       '&::placeholder': { color: 'rgba(255,255,255,0.5)' },
                     },
                   }}
                 />
-                <Button 
-                  size="lg" 
-                  radius="xl"
+                <Button
+                  size="lg"
+                  radius="12"
                   style={{
                     background: 'linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)',
                     fontWeight: 700,
@@ -57,13 +58,13 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <Container size="xl" py={60}>
-        <Grid gutter={40}>
+        <Grid gutter="xl">
           {/* Brand Column */}
           <Grid.Col span={{ base: 12, md: 4 }}>
-            <Text 
-              style={{ 
-                fontSize: '28px', 
-                fontWeight: 800, 
+            <Text
+              style={{
+                fontSize: '28px',
+                fontWeight: 800,
                 letterSpacing: '-1px',
                 background: 'linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%)',
                 WebkitBackgroundClip: 'text',
@@ -71,7 +72,7 @@ export function Footer() {
                 backgroundClip: 'text',
               }}
             >
-              MARCA<span style={{ 
+              MARCA<span style={{
                 background: 'linear-gradient(135deg, #F59E0B 0%, #F97316 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -81,16 +82,16 @@ export function Footer() {
             <Text c="rgba(255,255,255,0.6)" mt="md" size="sm" style={{ maxWidth: '300px', lineHeight: 1.7 }}>
               Your premium destination for fashion, electronics, and lifestyle products across the UAE.
             </Text>
-            
+
             {/* App Badges */}
             <Group gap="sm" mt="xl">
               <Button
                 variant="outline"
                 color="gray"
                 leftSection={<IconBrandApple size={20} />}
-                radius="lg"
+                radius="12"
                 styles={{
-                  root: { borderColor: 'rgba(255,255,255,0.3)', color: 'white' },
+                  root: { borderColor: 'rgba(255,255,255,0.3)', color: 'white', borderRadius: '12px' },
                 }}
               >
                 App Store
@@ -99,9 +100,9 @@ export function Footer() {
                 variant="outline"
                 color="gray"
                 leftSection={<IconBrandGooglePlay size={20} />}
-                radius="lg"
+                radius="12"
                 styles={{
-                  root: { borderColor: 'rgba(255,255,255,0.3)', color: 'white' },
+                  root: { borderColor: 'rgba(255,255,255,0.3)', color: 'white', borderRadius: '12px' },
                 }}
               >
                 Play Store
@@ -113,11 +114,11 @@ export function Footer() {
           <Grid.Col span={{ base: 6, sm: 4, md: 2 }}>
             <Text fw={700} c="white" mb="md">Shop</Text>
             {footerLinks.shop.map((link) => (
-              <Anchor 
-                key={link} 
-                href="#" 
-                c="rgba(255,255,255,0.6)" 
-                size="sm" 
+              <Anchor
+                key={link}
+                href="#"
+                c="rgba(255,255,255,0.6)"
+                size="sm"
                 underline="never"
                 display="block"
                 mb="xs"
@@ -133,11 +134,11 @@ export function Footer() {
           <Grid.Col span={{ base: 6, sm: 4, md: 2 }}>
             <Text fw={700} c="white" mb="md">Help</Text>
             {footerLinks.help.map((link) => (
-              <Anchor 
-                key={link} 
-                href="#" 
-                c="rgba(255,255,255,0.6)" 
-                size="sm" 
+              <Anchor
+                key={link}
+                href="#"
+                c="rgba(255,255,255,0.6)"
+                size="sm"
                 underline="never"
                 display="block"
                 mb="xs"
@@ -153,11 +154,11 @@ export function Footer() {
           <Grid.Col span={{ base: 6, sm: 4, md: 2 }}>
             <Text fw={700} c="white" mb="md">Company</Text>
             {footerLinks.company.map((link) => (
-              <Anchor 
-                key={link} 
-                href="#" 
-                c="rgba(255,255,255,0.6)" 
-                size="sm" 
+              <Anchor
+                key={link}
+                href="#"
+                c="rgba(255,255,255,0.6)"
+                size="sm"
                 underline="never"
                 display="block"
                 mb="xs"
@@ -175,11 +176,11 @@ export function Footer() {
             <Text fw={700} c="white" mb="md">Follow Us</Text>
             <Group gap="xs">
               {[IconBrandFacebook, IconBrandInstagram, IconBrandTwitter, IconBrandYoutube].map((Icon, i) => (
-                <ActionIcon 
+                <ActionIcon
                   key={i}
-                  variant="subtle" 
-                  size="lg" 
-                  radius="xl"
+                  variant="subtle"
+                  size="lg"
+                  radius="12"
                   style={{
                     color: 'rgba(255,255,255,0.6)',
                     transition: 'all 0.2s',
@@ -206,7 +207,7 @@ export function Footer() {
         <Container size="xl">
           <Group justify="space-between">
             <Text size="sm" c="rgba(255,255,255,0.5)">
-              © 2025 MarcaLife. All rights reserved.
+              © 2025 Marca. All rights reserved.
             </Text>
             <Group gap="lg">
               <Anchor href="#" size="sm" c="rgba(255,255,255,0.5)" underline="never">Privacy Policy</Anchor>

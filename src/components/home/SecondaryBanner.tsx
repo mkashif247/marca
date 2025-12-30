@@ -5,12 +5,13 @@ export function SecondaryBanner() {
   return (
     <Container size="xl" py={60}>
       <Paper 
-        radius="xl" 
+        radius="12" 
         p={{ base: 'xl', md: 50 }}
         style={{ 
           background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
           overflow: 'hidden',
           position: 'relative',
+          boxShadow: '0 4px 20px rgba(0,0,0,0.12)',
         }}
       >
         {/* Decorative gradient orb */}
@@ -28,7 +29,7 @@ export function SecondaryBanner() {
           }}
         />
 
-        <Grid align="center" gutter={50}>
+        <Grid align="center" gutter="xl">
           <Grid.Col span={{ base: 12, md: 6 }}>
             <Box style={{ position: 'relative', zIndex: 1 }}>
               <Text size="sm" fw={600} c="violet" tt="uppercase" mb="sm" style={{ letterSpacing: '2px' }}>
@@ -70,7 +71,7 @@ export function SecondaryBanner() {
           </Grid.Col>
 
           <Grid.Col span={{ base: 12, md: 6 }}>
-            <Grid gutter="lg">
+            <Grid gutter="md">
               <PromoFeature 
                 icon={<IconTruck size={24} />} 
                 title="Free Delivery" 
@@ -105,7 +106,7 @@ function PromoFeature({ icon, title, desc }: { icon: React.ReactNode; title: str
       <Group gap="md" align="flex-start">
         <ThemeIcon 
           size={48} 
-          radius="lg" 
+          radius="12" 
           variant="light" 
           color="violet"
           style={{

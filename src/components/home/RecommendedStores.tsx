@@ -58,19 +58,29 @@ export function RecommendedStores() {
         </Button>
       </Group>
       
-      <Grid gutter="lg">
+      <Grid gutter="12px">
         {stores.map((store, index) => (
           <Grid.Col key={store.name} span={{ base: 12, sm: 6, md: 3 }}>
             <Card 
               shadow="sm" 
               padding={0} 
-              radius="lg" 
+              radius="12" 
               h="100%"
               className="hover-lift"
               style={{ 
                 overflow: 'hidden',
                 border: '1px solid #E2E8F0',
                 animationDelay: `${index * 0.1}s`,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                transition: 'box-shadow 0.3s ease, transform 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.12)';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <Card.Section style={{ position: 'relative' }} className="img-zoom">
