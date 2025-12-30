@@ -8,7 +8,7 @@ export function HeroBanner() {
         .masonry-container {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          grid-auto-rows: 100px;
+          grid-auto-rows: calc((700px - 6px) / 7);
           gap: 6px;
           width: 100%;
           margin: 0;
@@ -27,11 +27,11 @@ export function HeroBanner() {
         }
         .masonry-item-medium {
           grid-row: span 4;
-          height: 400px;
+          height: calc((700px - 6px) / 7 * 4);
         }
         .masonry-item-small {
           grid-row: span 3;
-          height: 300px;
+          height: calc((700px - 6px) / 7 * 3);
         }
         .masonry-item-tall {
           grid-row: span 7;
@@ -262,7 +262,7 @@ export function HeroBanner() {
             - Mood: Comfortable, inviting, neutral tones
             - Composition: Room shot showing bed as focal point
           */}
-            <div className="masonry-item masonry-item-medium" style={{ overflow: 'hidden', height: '400px', width: '100%', margin: '0', padding: '0' }}>
+            <div className="masonry-item masonry-item-medium" style={{ overflow: 'hidden', height: 'calc((700px - 6px) / 7 * 4)', width: '100%', margin: '0', padding: '0' }}>
               <FullImageTile
                 discount="40% OFF"
                 category="Bedding."
@@ -272,7 +272,7 @@ export function HeroBanner() {
             </div>
 
             {/* Portrait Tile - Trending (Different female image) */}
-            <div className="masonry-item masonry-item-small" style={{ overflow: 'hidden', height: '300px', width: '100%', margin: '0', padding: '0' }}>
+            <div className="masonry-item masonry-item-small" style={{ overflow: 'hidden', height: 'calc((700px - 6px) / 7 * 3)', width: '100%', margin: '0', padding: '0' }}>
               <PortraitTile
                 title="Trending Now"
                 ctaText="Shop Now"
