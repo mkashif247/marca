@@ -272,7 +272,7 @@ export function HeroBanner() {
             </div>
 
             {/* Portrait Tile - Trending (Different female image) */}
-            <div className="masonry-item masonry-item-small" style={{ overflow: 'hidden', height: 'calc((700px - 6px) / 7 * 3)', width: '100%', margin: '0', padding: '0' }}>
+            <div className="masonry-item masonry-item-small" style={{ overflow: 'hidden', height: 'calc((700px - 6px) / 7 * 2.8)', width: '100%', margin: '0', padding: '0' }}>
               <PortraitTile
                 title="Trending Now"
                 ctaText="Shop Now"
